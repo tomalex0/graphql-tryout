@@ -4,6 +4,6 @@ Based on https://scotch.io/@codediger/build-a-simple-graphql-api-server-with-exp
 
 `npm install`
 
-`node install`
+`node index.js`
 
 `http://localhost:3000`
