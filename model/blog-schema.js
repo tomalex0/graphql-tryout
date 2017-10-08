@@ -41,8 +41,13 @@ const BlogQueryRootType = new GraphQLObjectType({
         posts: {
             type: new GraphQLList(PostType),
             description: "List of all Posts",
-            resolve: function(args) {
-                return Posts;
+            args:{
+                id :{type:new GraphQLList(GraphQLString)}
+            },
+            resolve: function(root, args) {
+                return args.id
+                    ? _.filter(Posts, positem => args.id.indexOf(positem.id) > -1 )
+                    : Posts
             }
         },
         post: {
