@@ -9,12 +9,13 @@
 
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
-const schema = require('./model/schema.js');
+//const schema = require('./model/schema.js');
+const blogschema = require('./model/blog-schema');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use('/', graphqlHTTP({
-    schema: schema,
+    schema: blogschema,
     graphiql: true //set to false if you don't want graphiql enabled
 }));
 
