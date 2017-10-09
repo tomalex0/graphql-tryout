@@ -34,8 +34,13 @@ const BlogQueryRootType = new GraphQLObjectType({
         authors: {
             type: new GraphQLList(AuthorType),
             description: "List of all Authors",
-            resolve: function() {
-                return Authors
+            args:{
+                id :{type:new GraphQLList(GraphQLString)}
+            },
+            resolve: function(root,args) {
+                return args.id
+                    ? _.filter(Authors, item => args.id.indexOf(item.id) > -1 )
+                    : Authors
             }
         },
         posts: {
@@ -46,7 +51,7 @@ const BlogQueryRootType = new GraphQLObjectType({
             },
             resolve: function(root, args) {
                 return args.id
-                    ? _.filter(Posts, positem => args.id.indexOf(positem.id) > -1 )
+                    ? _.filter(Posts, item => args.id.indexOf(item.id) > -1 )
                     : Posts
             }
         },
