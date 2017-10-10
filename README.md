@@ -7,6 +7,10 @@ https://blog.risingstack.com/graphql-overview-getting-started-with-graphql-and-n
 
 https://medium.com/graphql-mastery/json-as-an-argument-for-graphql-mutations-and-queries-3cd06d252a04
 
+https://github.com/mugli/learning-graphql/
+
+https://github.com/mugli/learning-graphql/blob/master/7.%20Deep%20Dive%20into%20GraphQL%20Type%20System.md
+
 `npm install`
 
 `node index.js`
